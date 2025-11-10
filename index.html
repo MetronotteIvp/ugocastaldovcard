@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Biglietto - Ugo Castaldo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg:#0f1724; --card:#0b1220; --accent:#1f6feb;
+      --muted:#9aa4b2; --white:#ffffff;
+    }
+    * { box-sizing:border-box; }
+    body {
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#071024 0%, #081423 100%);
+      min-height:100vh; display:flex; align-items:center; justify-content:center;
+      padding:24px; color:var(--white);
+    }
+    .card {
+      width:100%; max-width:420px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius:16px; padding:28px; text-align:center;
+      box-shadow:0 8px 30px rgba(2,6,23,0.7);
+    }
+    .avatar {
+      width:180px; height:180px; border-radius:50%; overflow:hidden;
+      margin:0 auto 18px; border:4px solid var(--accent);
+    }
+    .avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+    .name { font-size:26px; font-weight:700; margin:0; }
+    .title { color:var(--accent); font-weight:600; margin:6px 0 12px; }
+    .about { color:var(--muted); line-height:1.45; margin-bottom:18px; }
+    .section-title {
+      font-size:12px; color:var(--muted);
+      text-transform:uppercase; letter-spacing:1px;
+      margin:20px 0 10px;
+    }
+    .contacts, .social {
+      display:flex; flex-direction:column; gap:10px; align-items:center;
+    }
+    .chip {
+      background:rgba(255,255,255,0.03);
+      padding:10px 14px; border-radius:10px;
+      display:flex; align-items:center; gap:10px;
+      width:80%; justify-content:center;
+    }
+    .chip a { color:var(--white); text-decoration:none; }
+    .social {
+      flex-direction:row; justify-content:center; gap:14px;
+      margin-top:8px;
+    }
+    .social a { color:var(--white); font-size:22px; transition:color .2s; }
+    .social a:hover { color:var(--accent); }
+    .qr { margin-top:22px; display:flex; justify-content:center; }
+    .btn {
+      background:var(--accent); color:white; padding:10px 14px; border-radius:10px;
+      text-decoration:none; font-weight:600; display:inline-block; margin-top:10px;
+    }
+    .company { margin-top:10px; color:var(--muted); }
+    .company strong { color:var(--white); }
+    .maplist { margin-top:10px; display:grid; gap:6px; }
+    
+    /* Stile immagini in basso con fade-in */
+    .bottom-images {
+      display: flex; justify-content:center; gap:12px;
+      margin-top:20px; flex-wrap:wrap;
+    }
+    .bottom-images img {
+      width:50px; height:auto; border-radius:6px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.4);
+      opacity:0; transform: translateY(20px);
+      transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s;
+    }
+    .bottom-images img.visible {
+      opacity:1;
+      transform: translateY(0);
+    }
+    .bottom-images img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    }
+
+    footer { margin-top:18px; color:var(--muted); font-size:12px; }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="avatar">
+      <img src="photo.jpg" alt="Ugo Castaldo">
+    </div>
+    <h1 class="name">Ugo Castaldo</h1>
+    <div class="title">Consulente Commerciale — Metronotte Ivp s.r.l.</div>
+
+    <!-- DESCRIZIONE -->
+    <p class="about">Istituto di vigilanza privata leader nel settore, opera su Avellino, Milano, Napoli, Monza, Brianza, Pavia, Salerno, Caserta e Benevento. Sicurezza e affidabilità per aziende e privati.</p>
+
+    <!-- SOCIAL -->
+    <div class="section-title">Social</div>
+    <div class="social">
+      <a href="https://wa.me/393403892012" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <!-- CONTATTI -->
+    <div class="section-title">Contatti</div>
+    <div class="contacts">
+      <div class="chip"><i class="fa-solid fa-phone"></i><a href="tel:+393403892012">+39 340 3892012</a></div>
+      <div class="chip"><i class="fa-solid fa-envelope"></i><a href="mailto:presentazione@metronotte.biz">presentazione@metronotte.biz</a></div>
+      <div class="chip"><i class="fa-solid fa-globe"></i><a href="https://www.metronotte.biz" target="_blank" rel="noopener">www.metronotte.biz</a></div>
+    </div>
+
+    <!-- DATI AZIENDALI (pulsante) -->
+    <div class="section-title">Dati Aziendali</div>
+    <a class="btn" href="https://metronotteivp.github.io/datiaziendali/" target="_blank">Visualizza dati aziendali</a>
+
+    <!-- AZIENDA -->
+    <div class="section-title">Azienda</div>
+    <div class="company">
+      <div><strong>Metronotte I.V.P. S.R.L.</strong></div>
+      <div>PEC: metronotte@pec.it · P.IVA: 03078520644</div>
+      <div class="maplist">
+        <a href="https://maps.google.com/?q=Via+Piave+168+Avellino" target="_blank">Via Piave, 168, 83100 Avellino (AV)</a>
+        <a href="https://maps.google.com/?q=Via+P.+della+Francesca+26+Trezzano+Sul+Naviglio" target="_blank">Via P. della Francesca, 26, 20090 Trezzano sul Naviglio (MI)</a>
+        <a href="https://maps.google.com/?q=Via+del+Fiumicello+7+Napoli" target="_blank">Via del Fiumicello, 7, 80142 Napoli (NA)</a>
+      </div>
+    </div>
+
+    <!-- QR CODE -->
+    <div class="qr">
+      <canvas id="qrcode"></canvas>
+    </div>
+
+    <footer>© 2025 Metronotte I.V.P. S.R.L.</footer>
+  </main>
+
+  <!-- QR code generator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script>
+    const qr = new QRious({
+      element: document.getElementById('qrcode'),
+      value:'https://metronotteivp.github.io/ugocastaldo/',
+      size: 120,
+      background: 'transparent',
+      foreground: '#1f6feb'
+    });
+
+    // Fade-in per le immagini in basso
+    const images = document.querySelectorAll('.bottom-images img');
+    window.addEventListener('load', () => {
+      images.forEach((img, index) => {
+        setTimeout(() => {
+          img.classList.add('visible');
+        }, index * 200); // effetto sequenziale
+      });
+    });
+  </script>
+</body>
+</html>
